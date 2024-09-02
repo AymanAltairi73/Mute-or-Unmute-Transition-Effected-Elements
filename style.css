@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: rgb(5, 4, 4);
+}
+
+.btn {
+  font-family: fantasy;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  width: 160px;
+  height: 60px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(48, 41, 42);
+  color: #ff0000;
+  transform: scale(3);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Mute and Unmute span */
+.btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 300ms ease, transform 400ms ease;
+}
+
+/* Unmute span */
+.btn span:last-child {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+}
+
+.btn.mute span:first-child {
+  transform: translate(-50%, -200%);
+  opacity: 0;
+}
+.btn.mute span:last-child {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
